@@ -29,7 +29,21 @@ class MSD
     private static  $aux = [];   // 数据分类的辅助数组
 
 
-    private static function charAt(){
+    /**
+     * 如果被检查的字符串到达末尾了，就返回 -1，否则返回相应位置的字符
+     * @param $string string
+     * @param $d int
+     * @return int|mixed
+     */
+    private static function charAt($string, $d){
+        if (strlen($string) < $d){
+            return $string[$d];
+        } else {
+            return -1;
+        }
+    }
+
+    public static function sort(){
         
     }
 
