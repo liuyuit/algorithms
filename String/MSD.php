@@ -43,8 +43,11 @@ class MSD
         }
     }
 
-    public static function sort(){
-        
+    /**
+     * @param $a array
+     */
+    public static function sort($a){
+
     }
 
 
@@ -95,14 +98,14 @@ class MSD
     }
 
     /**
-     * 初始化一个有 $count 个元素的索引数组，每个元素的值都是 0
+     * 初始化一个有 $count 个元素的索引数组，每个元素的值都是空字符串
      * @param $count
      * @return array
      */
     protected function iniArray($count){
         $array = [];
         for ($i = 0; $i < $count; $i++){
-            $array[$i] = 0;
+            $array[$i] = '';
         }
 
         return $array;
