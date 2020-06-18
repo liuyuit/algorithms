@@ -24,8 +24,14 @@ function MSDExample(){
 
 class MSD
 {
-    private static  $R = 256;
-    private static  $R = 256;
+    private static  $R = 256;   // 基数
+    private static  $M = 256;   // 小数组切换的阈值
+    private static  $aux = [];   // 数据分类的辅助数组
+
+
+    private static function charAt(){
+        
+    }
 
 
 
