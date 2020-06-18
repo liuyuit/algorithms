@@ -36,39 +36,12 @@ class MSD
     public static function sort($a){
         $N = count($a);
         static::$aux = static::iniArray($N);
-        static::sortExcute($a,);
+        static::sortExecute($a, 0,$N - 1, 0);
     }
 
-
-    /**
-     * 如果被检查的字符串到达末尾了，就返回 -1，否则返回相应位置的字符
-     * @param $string string
-     * @param $d int
-     * @return int|mixed
-     */
-    private static function charAt($string, $d){
-        if (strlen($string) < $d){
-            return $string[$d];
-        } else {
-            return -1;
-        }
-    }
-
-
-    /**
-     * MSD constructor.
-     * @param $a array 索引数组，元素是要排序的字符串
-     * @param $W int 根据字符串前 W 个字符排序
-     */
-    public function __construct($a, $W)
-    {
-        $N = count($a); // 待排序字符串总数
-        $R = 256; // 字符分组的总数，也是 ascii 码的总数
-        $aux = [];
-
+    private static function sortExecute($a, $lo, $hi, $d){
         // 从右至左将每个位置的字符作为键，用键索引法将字符串排序 W 遍。
         for ($d = $W -1; $d >= 0; $d--){
-            $count = $this->iniArray($R + 1);
 
             // 计算字符串中第 $d 个字符的出现频率
             for ($i = 0; $i < $N; $i++){
@@ -95,9 +68,22 @@ class MSD
                 $a[$i] = $aux[$i];
             }
         }
-
-        print_r($a);
     }
+
+    /**
+     * 如果被检查的字符串到达末尾了，就返回 -1，否则返回相应位置的字符
+     * @param $string string
+     * @param $d int
+     * @return int|mixed
+     */
+    private static function charAt($string, $d){
+        if (strlen($string) < $d){
+            return $string[$d];
+        } else {
+            return -1;
+        }
+    }
+    
 
     /**
      * 初始化一个有 $count 个元素的索引数组，每个元素的值都是空字符串
