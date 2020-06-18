@@ -16,15 +16,20 @@ function MSDExample(){
         'shells',
         'are',
         'surely',
-        'sure',
-        'sure',
+        'seashells',
     ];
 
-    new MSD($a, 5);
+    new MSD($a, 2);
 }
 
 class MSD
 {
+    private static  $R = 256;
+    private static  $R = 256;
+
+
+
+
     /**
      * MSD constructor.
      * @param $a array 索引数组，元素是要排序的字符串
